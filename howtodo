@@ -1,0 +1,10 @@
+np.loadtxt('test/file_num.txt',dtype=np.int,delimiter=",")
+np.loadtxt("test/target.txt")
+from sklearn import svm
+clf = svm.SVC(gamma=0.001,C=100)
+clf.fit(feature,target)
+clf.predict([1097,319,0])
+
+
+
+
