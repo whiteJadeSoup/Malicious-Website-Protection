@@ -1,4 +1,0 @@
-test
-edit
-local add
-ubuntu edit
