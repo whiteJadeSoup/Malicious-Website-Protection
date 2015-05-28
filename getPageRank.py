@@ -32,7 +32,8 @@ def getPR(www):
         response = requests.get(url)
         rex = re.search(r'(.*?:.*?:)(\d+)',response.text)
         return rex.group(2)
-    except :
+    except Exception, e:
+        print e
         return None
 
 def getBR(www):
@@ -42,8 +43,8 @@ def getBR(www):
         data = response.text
         rex = re.search(r'(<div class="siteinfo">.+?<font.+?>)(\d*?)(</font>)',data,re.I)
         return rex.group(2)
-    except :
-        return None
+    except Exception,e:
+        return 0
 
 if __name__ == "__main__" :
-    print getPR("www.7k7kk.com")
+    print getPR("www.7k7k.com")
