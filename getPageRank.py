@@ -1,12 +1,6 @@
 #!/usr/bin/env python
+#coding=utf-8
 
-# Google Pagerank Checksum Algorithm (Firefox Toolbar)
-# Downloaded from http://pagerank.phurix.net/
-# Requires: Python >= 2.4
-
-# Versions:
-# pagerank2.py 0.2 - Fixed a minor formatting bug
-# pagerank2.py 0.1 - Public release
 
 
 import requests
@@ -45,5 +39,3 @@ def getBR(www):
     except :
         return None
 
-if __name__ == "__main__" :
-    print getPR("www.7k7kk.com")
