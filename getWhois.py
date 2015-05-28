@@ -22,7 +22,7 @@ def whois(host):
       return '查询域名:'+host+'\n'+'-'*60+'\n'+data
  
 
-def time_difference(data):
+def getTimeDifference(data):
     #获取时间
     index = data.find('过期')
     index = data.find('：',index)
@@ -64,29 +64,8 @@ def time_difference(data):
 
 
 
-def query():
-   host=raw_input('请输入域名不含"http://www."(q/Q退出):')
+def query(host):
+
    host=host.lower()
-   if host == 'q':
-       exit()
-   else:
-       data=whois(host)
-       index = data.find('过期')
-       index = data.find('：',index)
-       #print '过期时间开始:' + str(index)
-       #print '过期时间结束:' + str(data.find('\n',index))
-       #print '过期时间:' + data[index+3:data.find('\n',index)]
-
-
-       rindex = data.rfind('：',0,index)
-       #print '创建时间开始:' + str(rindex)
-       #print '创建时间:' + data[rindex+3:data.find('\n',rindex)]
-
-       print time_difference(data)
-
-       print data
-
-
-
-if __name__ == '__main__':
-  query()
+   data=whois(host)
+   return getTimeDifference(data)
